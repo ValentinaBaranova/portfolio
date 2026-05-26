@@ -1,0 +1,43 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="contact" class="py-16 md:py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="bg-blue-600 rounded-3xl p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl shadow-blue-200">
+      <div class="relative z-10">
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6">{t('contact.title')}</h2>
+        <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+          {t('contact.text')}
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href={t('contact.email.url')} class="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-colors">
+            {t('contact.email')}
+          </a>
+          <a href={t('contact.whatsapp.url')} target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-blue-700 text-white font-bold rounded-xl hover:bg-blue-800 transition-colors border border-blue-500">
+            {t('contact.whatsapp')}
+          </a>
+          <a href={t('contact.linkedin.url')} target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-blue-700 text-white font-bold rounded-xl hover:bg-blue-800 transition-colors border border-blue-500">
+            {t('contact.linkedin')}
+          </a>
+          <a href={t('contact.github.url')} target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-blue-700 text-white font-bold rounded-xl hover:bg-blue-800 transition-colors border border-blue-500">
+            {t('contact.github')}
+          </a>
+          <a href="/Valentina Baranova - CV - Senior Backend Engineer.pdf" download="Valentina Baranova - CV.pdf" class="px-8 py-4 bg-blue-700 text-white font-bold rounded-xl hover:bg-blue-800 transition-colors border border-blue-500 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            {t('hero.cta.cv')}
+          </a>
+        </div>
+      </div>
+      
+      <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-500 rounded-full blur-3xl opacity-50"></div>
+      <div class="absolute -top-24 -right-24 w-64 h-64 bg-indigo-500 rounded-full blur-3xl opacity-50"></div>
+    </div>
+  </div>
+</section>

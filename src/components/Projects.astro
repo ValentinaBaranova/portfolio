@@ -1,0 +1,48 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const projects = [
+  {
+    title: t('projects.1.title'),
+    description: t('projects.1.desc'),
+    tags: t('projects.1.tags') as unknown as string[],
+  },
+  {
+    title: t('projects.2.title'),
+    description: t('projects.2.desc'),
+    tags: t('projects.2.tags') as unknown as string[],
+  }
+];
+---
+
+<section id="projects" class="py-16 md:py-24 bg-slate-50">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 mb-4">{t('projects.title')}</h2>
+      <div class="h-1 w-12 bg-blue-600 rounded-full"></div>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-10">
+      {projects.map((project) => (
+        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all">
+          <div class="p-8">
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">{project.title}</h3>
+            <p class="text-slate-600 mb-8 leading-relaxed">
+              {project.description}
+            </p>
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-md uppercase tracking-wider">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
