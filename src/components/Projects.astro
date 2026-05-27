@@ -6,14 +6,26 @@ const t = useTranslations(lang);
 
 const projects = [
   {
-    title: t('projects.1.title'),
-    description: t('projects.1.desc'),
-    tags: t('projects.1.tags') as unknown as string[],
-  },
-  {
     title: t('projects.2.title'),
     description: t('projects.2.desc'),
-    tags: t('projects.2.tags') as unknown as string[],
+    tags: t('projects.2.tags'),
+    link: 'https://language-exercises.com/',
+    github: 'https://github.com/ValentinaBaranova/lang-practice-web',
+    images: [
+      '/projects/lang-practice/home.png',
+      '/projects/lang-practice/practice.png',
+      '/projects/lang-practice/edit_exercise.png',
+      '/projects/lang-practice/telegram.png',
+    ]
+  },
+  {
+    title: t('projects.1.title'),
+    description: t('projects.1.desc'),
+    tags: t('projects.1.tags'),
+    images: [
+      '/projects/cultural-events/home.png',
+      '/projects/cultural-events/Demo - desktop - 720.mov',
+    ]
   }
 ];
 ---
@@ -25,20 +37,91 @@ const projects = [
       <div class="h-1 w-12 bg-blue-600 rounded-full"></div>
     </div>
     
-    <div class="grid md:grid-cols-2 gap-10">
+    <div class="grid grid-cols-1 gap-12">
       {projects.map((project) => (
-        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all">
-          <div class="p-8">
+        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col">
+          {project.images && (
+            <div class="relative group bg-slate-900 border-b border-slate-800">
+              <div class="flex gap-6 p-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar carousel-container">
+                {project.images.map((item) => {
+                  const isVideo = item.toLowerCase().endsWith('.mov') || item.toLowerCase().endsWith('.mp4') || item.toLowerCase().endsWith('.webm');
+                  return isVideo ? (
+                    <video 
+                      src={item} 
+                      controls 
+                      muted 
+                      loop 
+                      playsinline
+                      class="h-80 md:h-[500px] w-auto rounded-lg shadow-md object-cover flex-none snap-center"
+                    />
+                  ) : (
+                    <img 
+                      src={item} 
+                      alt={project.title} 
+                      class="h-80 md:h-[500px] w-auto rounded-lg shadow-md object-cover flex-none snap-center" 
+                    />
+                  );
+                })}
+              </div>
+              
+              <button 
+                class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 carousel-prev z-10 cursor-pointer" 
+                aria-label="Previous image"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              
+              <button 
+                class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 carousel-next z-10 cursor-pointer" 
+                aria-label="Next image"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          )}
+          <div class="p-8 flex-1 flex flex-col">
             <h3 class="text-2xl font-bold text-slate-900 mb-4">{project.title}</h3>
             <p class="text-slate-600 mb-8 leading-relaxed">
               {project.description}
             </p>
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-2 mb-8">
               {project.tags.map((tag) => (
                 <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-md uppercase tracking-wider">
                   {tag}
                 </span>
               ))}
+            </div>
+            <div class="mt-auto flex flex-wrap gap-6">
+              {project.link && (
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors group/link"
+                >
+                  {t('projects.view')}
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              )}
+              {project.github && (
+                <a 
+                  href={project.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-2 text-slate-600 font-bold hover:text-slate-900 transition-colors group/link"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  {t('projects.github')}
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -46,3 +129,41 @@ const projects = [
     </div>
   </div>
 </section>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  function setupCarousels() {
+    const carousels = document.querySelectorAll('.group');
+    
+    carousels.forEach(group => {
+      const container = group.querySelector('.carousel-container');
+      const prevBtn = group.querySelector('.carousel-prev');
+      const nextBtn = group.querySelector('.carousel-next');
+      
+      if (!container || !prevBtn || !nextBtn) return;
+      
+      prevBtn.addEventListener('click', () => {
+        container.scrollBy({ left: -400, behavior: 'smooth' });
+      });
+      
+      nextBtn.addEventListener('click', () => {
+        container.scrollBy({ left: 400, behavior: 'smooth' });
+      });
+    });
+  }
+
+  // Initial setup
+  setupCarousels();
+  
+  // Re-run on view transitions
+  document.addEventListener('astro:after-swap', setupCarousels);
+</script>
