@@ -28,7 +28,7 @@ const t = useTranslations(lang);
             download="Valentina Baranova - CV.pdf"
             class="px-8 py-4 bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-600 font-bold rounded-lg transition-all flex items-center gap-2"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="hidden md:block w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
             {t('hero.cta.cv')}
@@ -42,11 +42,7 @@ const t = useTranslations(lang);
           </div>
           <div class="flex items-center justify-center md:justify-start gap-3 text-sm font-medium text-slate-500">
             <span class="w-2 h-2 rounded-full bg-slate-300"></span>
-            {t('hero.location')}
-          </div>
-          <div class="flex items-center justify-center md:justify-start gap-3 text-sm font-medium text-slate-500">
-            <span class="w-2 h-2 rounded-full bg-slate-300"></span>
-            {t('hero.languages')}
+            {t('hero.location')} · {t('hero.languages')}
           </div>
         </div>
       </div>

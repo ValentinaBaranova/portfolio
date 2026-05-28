@@ -1,13 +1,18 @@
 ---
-import { getLangFromUrl } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import '../styles/global.css';
 
 interface Props {
-	title: string;
+	title?: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const siteTitle = title || t('site.title');
+const siteDescription = description || t('site.description');
 ---
 
 <!doctype html>
@@ -17,7 +22,9 @@ const lang = getLangFromUrl(Astro.url);
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{siteTitle}</title>
+		<meta name="description" content={siteDescription} />
+		<meta name="keywords" content={t('site.keywords')} />
 	</head>
 	<body class="bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-900 antialiased">
 		<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
@@ -28,10 +35,10 @@ const lang = getLangFromUrl(Astro.url);
 				<div class="flex items-center gap-6">
 					<div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
 						<a href="#projects" class="hover:text-blue-600 transition-colors">
-							{lang === 'en' ? 'Projects' : 'Proyectos'}
+							{t('nav.projects')}
 						</a>
 						<a href="#contact" class="hover:text-blue-600 transition-colors">
-							{lang === 'en' ? 'Contact' : 'Contacto'}
+							{t('nav.contact')}
 						</a>
 					</div>
 					<div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider">
@@ -57,8 +64,11 @@ const lang = getLangFromUrl(Astro.url);
 		</main>
 		<footer class="bg-slate-50 border-t border-slate-100 py-12">
 			<div class="max-w-5xl mx-auto px-6 text-center">
+				<p class="text-slate-900 font-bold mb-2">
+					&copy; {new Date().getFullYear()} Valentina Baranova · Buenos Aires, Argentina
+				</p>
 				<p class="text-slate-500 text-sm">
-					&copy; {new Date().getFullYear()} Valentina Baranova. Buenos Aires, Argentina.
+					Freelance web app & automation developer · English · Spanish · Russian
 				</p>
 			</div>
 		</footer>
