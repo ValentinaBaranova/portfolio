@@ -19,7 +19,7 @@ const personStructuredData = {
   "@type": "Person",
   "name": "Valentina Baranova",
   "url": Astro.url.origin,
-  "jobTitle": "Freelance Web App & Automation Developer",
+  "jobTitle": t('site.role'),
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Buenos Aires",
@@ -34,7 +34,7 @@ const personStructuredData = {
 const localBusinessStructuredData = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Valentina Baranova — Freelance Web App & Automation Developer",
+  "name": `Valentina Baranova — ${t('site.role')}`,
   "description": t('site.description'),
   "url": Astro.url.origin,
   "telephone": "+5491126593700",
@@ -108,7 +108,7 @@ const localBusinessStructuredData = {
 					&copy; {new Date().getFullYear()} Valentina Baranova · Buenos Aires
 				</p>
 				<p class="text-slate-500 text-sm">
-					Freelance web app & automation developer
+					{t('site.role')}
 				</p>
 			</div>
 		</footer>
