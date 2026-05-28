@@ -12,10 +12,22 @@ const projects = [
     link: 'https://language-exercises.com/',
     github: 'https://github.com/ValentinaBaranova/lang-practice-web',
     images: [
-      '/projects/lang-practice/home.png',
-      '/projects/lang-practice/practice.png',
-      '/projects/lang-practice/edit_exercise.png',
-      '/projects/lang-practice/telegram.png',
+      {
+        mobile: '/projects/lang-practice/mobile/home.jpg',
+        desktop: '/projects/lang-practice/home.png'
+      },
+      {
+        mobile: '/projects/lang-practice/mobile/practice.jpg',
+        desktop: '/projects/lang-practice/practice.png'
+      },
+      {
+        mobile: '/projects/lang-practice/mobile/edit_exercise.jpg',
+        desktop: '/projects/lang-practice/edit_exercise.png'
+      },
+      {
+        mobile: '/projects/lang-practice/mobile/telegram.jpg',
+        desktop: '/projects/lang-practice/telegram.png'
+      },
     ]
   },
   {
@@ -23,7 +35,16 @@ const projects = [
     description: t('projects.2.desc'),
     tags: t('projects.2.tags'),
     images: [
-      '/projects/cultural-events/home.png',
+      {
+        mobile: '/projects/cultural-events/mobile/home.jpg',
+        desktop: '/projects/cultural-events/home.png'
+      },
+      {
+        mobile: '/projects/cultural-events/mobile/filters.jpg'
+      },
+      {
+        mobile: '/projects/cultural-events/mobile/context_menu.jpg'
+      },
       '/projects/cultural-events/demo.mp4',
     ]
   }
@@ -44,10 +65,13 @@ const projects = [
             <div class="relative group bg-slate-900 border-b border-slate-800">
               <div class="flex gap-6 p-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar carousel-container">
                 {project.images.map((item) => {
-                  const isVideo = item.toLowerCase().endsWith('.mov') || item.toLowerCase().endsWith('.mp4') || item.toLowerCase().endsWith('.webm');
+                  const isString = typeof item === 'string';
+                  const mainSrc = isString ? item : (item.desktop || item.mobile);
+                  const isVideo = mainSrc.toLowerCase().endsWith('.mov') || mainSrc.toLowerCase().endsWith('.mp4') || mainSrc.toLowerCase().endsWith('.webm');
+                  
                   return isVideo ? (
                     <video 
-                      src={item} 
+                      src={mainSrc} 
                       aria-label={`${t('site.alt.project')} - ${project.title}`}
                       controls 
                       muted 
@@ -56,11 +80,22 @@ const projects = [
                       class="h-80 md:h-[500px] w-auto rounded-lg shadow-md object-cover flex-none snap-center"
                     />
                   ) : (
-                    <img 
-                      src={item} 
-                      alt={`${t('site.alt.project')} - ${project.title}`} 
-                      class="h-80 md:h-[500px] w-auto rounded-lg shadow-md object-cover flex-none snap-center" 
-                    />
+                    isString ? (
+                      <img 
+                        src={item} 
+                        alt={`${t('site.alt.project')} - ${project.title}`} 
+                        class="h-80 md:h-[500px] w-auto rounded-lg shadow-md object-cover flex-none snap-center" 
+                      />
+                    ) : (
+                      <picture class="flex-none snap-center">
+                        {item.desktop && <source media="(min-width: 768px)" srcset={item.desktop} />}
+                        <img 
+                          src={item.mobile} 
+                          alt={`${t('site.alt.project')} - ${project.title}`} 
+                          class="h-80 md:h-[500px] w-auto rounded-lg shadow-md object-cover" 
+                        />
+                      </picture>
+                    )
                   );
                 })}
               </div>

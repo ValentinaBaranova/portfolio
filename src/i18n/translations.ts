@@ -17,7 +17,7 @@ export const ui = {
     'hero.headline': "Custom web apps and automation for growing businesses",
     'hero.subheadline': "First working version in 1–2 weeks",
     'hero.tech': 'Java · Kotlin · Spring Boot · Next.js · OpenAI',
-    'hero.location': 'Buenos Aires, Argentina · UTC-3',
+    'hero.location': 'Buenos Aires · UTC-3',
     'hero.languages': 'English · Spanish · Russian',
     'hero.cta.projects': 'See My Work',
     'hero.cta.contact': "Let's Talk",
@@ -26,7 +26,7 @@ export const ui = {
     'about.text': [
       "I'm an independent software developer based in Buenos Aires with over 18 years of experience. I handle the entire project myself — from how data is stored and processed to the interface your team will actually use.",
       "I specialize in turning messy operations into clean software — whether that means building an internal tool, launching the first version of your product, or integrating AI into an existing workflow. I work remotely with clients in Argentina, across LATAM, and internationally.",
-      "Most projects have a first working version ready in 1–2 weeks. Available for hourly work, fixed-scope projects, or ongoing collaboration — no long-term commitment required to get started.",
+      "Most projects have a first working version ready in 1–2 weeks. Hourly rate from $30, weekly collaboration from $1,000. No long-term commitment required to get started.",
       "I don't build mobile apps, WordPress sites, or online shops, and I don't do design-only work. If you need ongoing maintenance for an existing system without new development, I'm probably not the right fit either."
     ],
     'services.title': 'What I Can Build For You',
@@ -69,7 +69,7 @@ export const ui = {
     'hero.headline': 'Aplicaciones web a medida y automatización para negocios en crecimiento',
     'hero.subheadline': 'Primera versión funcional en 1–2 semanas',
     'hero.tech': 'Java · Kotlin · Spring Boot · Next.js · OpenAI',
-    'hero.location': 'Buenos Aires, Argentina · UTC-3',
+    'hero.location': 'Buenos Aires · UTC-3',
     'hero.languages': 'Inglés · Español · Ruso',
     'hero.cta.projects': 'Ver Proyectos',
     'hero.cta.contact': 'Contactame',
@@ -78,7 +78,7 @@ export const ui = {
     'about.text': [
       'Soy una desarrolladora de software independiente basada en Buenos Aires con más de 18 años de experiencia. Me encargo de todo el proyecto yo misma — desde cómo se almacenan y procesan los datos hasta la interfaz que tu equipo realmente usará.',
       'Me especializo en transformar operaciones desordenadas en software limpio — ya sea construyendo una herramienta interna, lanzando la primera versión de tu producto o integrando IA en un flujo de trabajo existente. Trabajo de forma remota con clientes en Argentina, toda LATAM e internacionalmente.',
-      'La mayoría de los proyectos tienen una primera versión funcional lista en 1–2 semanas. Disponible para trabajo por horas, proyectos de alcance fijo o colaboración continua; no se requiere un compromiso a largo plazo para comenzar.',
+      'La mayoría de los proyectos tienen una primera versión funcional lista en 1–2 semanas. Tarifa por hora desde USD 30, colaboración semanal desde USD 1.000. No se requiere un compromiso a largo plazo para comenzar.',
       'No construyo aplicaciones móviles, sitios en WordPress ni tiendas online, y tampoco realizo trabajos únicamente de diseño. Si necesitás mantenimiento para un sistema existente sin nuevos desarrollos, probablemente no sea la persona indicada.'
     ],
     'services.title': 'Qué puedo construir para vos',
@@ -104,7 +104,7 @@ export const ui = {
     'contact.title': 'Trabajemos Juntos',
     'contact.text': 'Si tenés un problema de negocio que el software podría resolver, enviame un mensaje contándome qué necesitás y me pondré en contacto con vos.',
     'contact.whatsapp': 'WhatsApp',
-    'contact.email': 'Enviame un email',
+    'contact.email': 'Email',
     'contact.linkedin': 'LinkedIn',
     'contact.whatsapp.url': 'https://wa.me/5491126593700',
     'contact.email.url': 'mailto:vbaranova87@gmail.com',
