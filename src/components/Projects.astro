@@ -24,7 +24,7 @@ const projects = [
     tags: t('projects.2.tags'),
     images: [
       '/projects/cultural-events/home.png',
-      '/projects/cultural-events/Demo - desktop - 720.mov',
+      '/projects/cultural-events/demo-mobile.mp4',
     ]
   }
 ];
@@ -48,6 +48,7 @@ const projects = [
                   return isVideo ? (
                     <video 
                       src={item} 
+                      aria-label={`${t('site.alt.project')} - ${project.title}`}
                       controls 
                       muted 
                       loop 
@@ -57,7 +58,7 @@ const projects = [
                   ) : (
                     <img 
                       src={item} 
-                      alt={project.title} 
+                      alt={`${t('site.alt.project')} - ${project.title}`} 
                       class="h-80 md:h-[500px] w-auto rounded-lg shadow-md object-cover flex-none snap-center" 
                     />
                   );
