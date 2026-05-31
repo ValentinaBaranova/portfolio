@@ -66,6 +66,12 @@ const localBusinessStructuredData = {
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- Hreflang Tags -->
+		<link rel="alternate" hreflang="en" href={new URL(finalEnUrl, Astro.site)} />
+		<link rel="alternate" hreflang="es" href={new URL(finalEsUrl, Astro.site)} />
+		<link rel="alternate" hreflang="x-default" href={new URL(finalEsUrl, Astro.site)} />
+
 		<title>{siteTitle}</title>
 		<meta name="description" content={siteDescription} />
 		<meta name="keywords" content={t('site.keywords')} />
