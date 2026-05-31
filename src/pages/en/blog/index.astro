@@ -1,0 +1,41 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout 
+  title="Blog — Valentina Baranova"
+  description="Articles about web development, business automation, and building products."
+>
+  <div class="max-w-5xl mx-auto px-6 pt-32 pb-20">
+    <header class="mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">Blog</h1>
+      <p class="text-xl text-slate-600 max-w-2xl">
+        Thoughts and guides on web development, automation, and launching digital products.
+      </p>
+    </header>
+
+    <div class="grid gap-12">
+      <article class="group relative flex flex-col items-start">
+        <h2 class="text-2xl font-bold tracking-tight text-slate-900 mb-2">
+          <a href="/en/blog/what-it-takes-to-launch-a-one-page-website/" class="hover:text-blue-600 transition-colors">
+            <span class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-slate-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl"></span>
+            <span class="relative z-10">What It Actually Takes to Launch a One-Page Website</span>
+          </a>
+        </h2>
+        <p class="relative z-10 mb-4 text-slate-600 leading-relaxed pointer-events-none">
+          Many people assume that having content ready is most of the work. In practice, it's closer to half. Here's what needs to happen between a content draft and a live website.
+        </p>
+        <div class="relative z-10 flex items-center text-sm font-semibold text-blue-600 pointer-events-none">
+          Read more
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="ml-1 h-4 w-4 stroke-current">
+            <path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+      </article>
+    </div>
+  </div>
+</Layout>

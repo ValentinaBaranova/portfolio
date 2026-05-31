@@ -1,0 +1,90 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout 
+  title="¿Qué se necesita realmente para lanzar una web de una sola página? — Valentina Baranova"
+  description="Muchos asumen que tener el contenido listo es la mayor parte del trabajo. En la práctica, es más bien la mitad. Esto es lo que sucede entre un borrador de contenido y un sitio web en vivo."
+  enUrl="/en/blog/what-it-takes-to-launch-a-one-page-website/"
+>
+  <article class="max-w-3xl mx-auto px-6 pt-32 pb-20">
+    <header class="mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
+        ¿Qué se necesita realmente para lanzar una web de una sola página?
+      </h1>
+      <p class="text-xl text-slate-600 leading-relaxed">
+        Muchos asumen que tener el contenido listo es la mayor parte del trabajo. En la práctica, es más bien la mitad. Esto es lo que sucede entre un borrador de contenido y un sitio web en vivo.
+      </p>
+    </header>
+
+    <div class="space-y-12">
+      <hr class="border-slate-100" />
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Refinamiento del contenido</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          El texto que se lee bien en un documento a menudo necesita ajustes una vez que está en una página real. El diseño, el tamaño de la fuente y el espaciado afectan cómo se percibe la información. La mayoría de los clientes revisan su contenido al menos una vez después de verlo maquetado; esto es normal y vale la pena considerarlo en el cronograma.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Diseño</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Antes de pasar al desarrollo, vale la pena explorar algunas opciones de diseño y dirección visual. Incluso un sitio de una sola página se beneficia de ver dos o tres variantes de diseño una al lado de la otra: paleta de colores, tipografía, orden de las secciones. Esto se hace normalmente en una herramienta de diseño como Figma y lleva una fracción del tiempo ajustarlo en comparación con hacer los mismos cambios en el código más adelante.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Activos visuales</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Un sitio web profesional generalmente requiere: una foto de perfil, muestras de trabajo o capturas de pantalla, y un favicon (el pequeño icono que se muestra en las pestañas del navegador). Estos rara vez se incluyen en el borrador inicial pero son esenciales para un resultado final. Algunos visuales también deben adaptarse según el tamaño de la pantalla: una imagen que funciona en escritorio puede necesitar recortes en móviles.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Conceptos básicos de SEO</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Es poco probable que los nuevos visitantes encuentren un sitio web que no esté configurado para los motores de búsqueda. La configuración mínima incluye una meta descripción (el resumen que se muestra en los resultados de Google), un título de página optimizado y el registro en Google Search Console. Estos pasos son invisibles para los visitantes pero críticos para la descubribilidad.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Segundo idioma</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Si su sitio necesita estar disponible en más de un idioma, la traducción automática es un punto de partida, no un resultado final. Los encabezados y las etiquetas de navegación, en particular, deben ser revisados por un hablante nativo, ya que las traducciones directas a menudo suenan poco naturales o pierden el tono pretendido. También hay una preocupación práctica de diseño: algunos idiomas producen textos notablemente más largos que otros, lo que puede romper el diseño. Es posible que sea necesario reformular botones, encabezados y bloques de texto cortos para que quepan en el mismo espacio sin que la página se vea diferente entre idiomas.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Dominio y hosting</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Es necesario comprar un dominio personalizado (tunombre.com), conectarlo al hosting y esperar unas horas para que se propague. El hosting para un sitio estático simple suele ser gratuito, pero la configuración aún requiere tiempo.
+        </p>
+      </section>
+
+      <hr class="border-slate-100" />
+
+      <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+        <p class="text-xl font-bold text-slate-900 mb-2">
+          Cronograma típico: 2–3 días
+        </p>
+        <p class="text-lg text-slate-600 mb-6">
+          para un portfolio de una sola página comenzando desde un borrador de contenido. La asistencia de IA ayuda en cada paso — redactar contenido, refinar textos, sugerir estructura — pero aún así necesita ser guiada, revisada y enriquecida con algo personal para que el resultado sea genuinamente valioso.
+        </p>
+        <p class="italic text-slate-700">
+          ¿Interesado en construir tu propio sitio o tenés preguntas sobre el proceso? <a href="/#contact" class="text-blue-600 font-semibold hover:underline">No dudes en ponerte en contacto.</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-100">
+      <a href="/blog/" class="text-blue-600 font-semibold hover:underline flex items-center gap-2">
+        <span>←</span> {t('blog.back')}
+      </a>
+    </div>
+  </article>
+</Layout>

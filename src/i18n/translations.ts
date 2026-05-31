@@ -8,6 +8,8 @@ export const defaultLang = 'es';
 export const ui = {
   en: {
     'nav.projects': 'Projects',
+    'nav.blog': 'Blog',
+    'blog.back': 'Back to articles',
     'nav.contact': 'Contact',
     'site.title': 'Valentina Baranova — Freelance Web App & Automation Developer | Buenos Aires',
     'site.role': 'Freelance web app & automation developer',
@@ -62,6 +64,8 @@ export const ui = {
   },
   es: {
     'nav.projects': 'Proyectos',
+    'nav.blog': 'Blog',
+    'blog.back': 'Volver a los artículos',
     'nav.contact': 'Contacto',
     'site.title': 'Valentina Baranova — Desarrolladora de aplicaciones web y automatización | Buenos Aires',
     'site.role': 'Desarrolladora freelance de aplicaciones web y automatización',

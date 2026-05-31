@@ -1,0 +1,90 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout 
+  title="What It Actually Takes to Launch a One-Page Website — Valentina Baranova"
+  description="Many people assume that having content ready is most of the work. In practice, it's closer to half. Here's what needs to happen between a content draft and a live website."
+  esUrl="/blog/que-se-necesita-para-lanzar-una-web-de-una-sola-pagina/"
+>
+  <article class="max-w-3xl mx-auto px-6 pt-32 pb-20">
+    <header class="mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
+        What It Actually Takes to Launch a One-Page Website
+      </h1>
+      <p class="text-xl text-slate-600 leading-relaxed">
+        Many people assume that having content ready is most of the work. In practice, it's closer to half. Here's what needs to happen between a content draft and a live website.
+      </p>
+    </header>
+
+    <div class="space-y-12">
+      <hr class="border-slate-100" />
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Content refinement</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Text that reads well in a document often needs adjusting once it's on a real page. Layout, font size, and spacing all affect how information is perceived. Most clients revise their copy at least once after seeing it rendered — this is normal and worth building into the timeline.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Design</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Before jumping into development, it's worth exploring a few layout and visual direction options. Even a simple one-page site benefits from seeing two or three design variants side by side — color palette, typography, section order. This is typically done in a design tool like Figma and takes a fraction of the time to adjust compared to making the same changes in code later.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Visual assets</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          A professional website typically requires: a profile photo, work samples or screenshots, and a favicon (the small icon shown in browser tabs). These are rarely included in the initial content draft but are essential for a finished result. Some visuals also need to be adapted per screen size — an image that works on desktop may need cropping on mobile.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">SEO basics</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          A website that isn't configured for search engines is unlikely to be found by new visitors. The minimum setup includes a meta description (the summary shown in Google results), an optimised page title, and registration in Google Search Console. These steps are invisible to visitors but critical for discoverability.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Second language</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          If your site needs to be available in more than one language, automatic translation is a starting point — not a finished result. Headings and navigation labels in particular need to be reviewed by a native speaker, as direct translations often sound unnatural or miss the intended tone. There's also a practical layout concern: some languages produce noticeably longer text than others, which can break the design. Buttons, headings, and short text blocks may need to be reworded to fit the same space without the page looking different across languages.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Domain and hosting</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          A custom domain (yourname.com) needs to be purchased, connected to hosting, and given a few hours to propagate. Hosting for a simple static site is often free, but the configuration still requires time.
+        </p>
+      </section>
+
+      <hr class="border-slate-100" />
+
+      <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+        <p class="text-xl font-bold text-slate-900 mb-2">
+          Typical timeline: 2–3 days
+        </p>
+        <p class="text-lg text-slate-600 mb-6">
+          for a one-page portfolio starting from a content draft. AI assistance helps at every step — drafting content, refining copy, suggesting structure — but it still needs to be guided, reviewed, and enriched with something personal to make the result genuinely valuable.
+        </p>
+        <p class="italic text-slate-700">
+          Interested in building your own site or have questions about the process? <a href="/en/#contact" class="text-blue-600 font-semibold hover:underline">Feel free to get in touch.</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-100">
+      <a href="/en/blog/" class="text-blue-600 font-semibold hover:underline flex items-center gap-2">
+        <span>←</span> {t('blog.back')}
+      </a>
+    </div>
+  </article>
+</Layout>
