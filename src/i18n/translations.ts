@@ -3,7 +3,7 @@ export const languages = {
   es: 'Español',
 };
 
-export const defaultLang = 'en';
+export const defaultLang = 'es';
 
 export const ui = {
   en: {
@@ -19,7 +19,7 @@ export const ui = {
     'hero.subheadline': "First working version in 1–2 weeks",
     'hero.tech': 'Java · Kotlin · Spring Boot · Next.js · OpenAI',
     'hero.city': 'Buenos Aires',
-    'hero.timezone': 'UTC-3',
+    'hero.timezone': 'Timezone UTC-3',
     'hero.languages': 'English · Spanish · Russian',
     'hero.cta.projects': 'See My Work',
     'hero.cta.contact': "Let's Talk",
@@ -73,7 +73,7 @@ export const ui = {
     'hero.subheadline': 'Primera versión en 1–2 semanas',
     'hero.tech': 'Java · Kotlin · Spring Boot · Next.js · OpenAI',
     'hero.city': 'Buenos Aires',
-    'hero.timezone': 'UTC-3',
+    'hero.timezone': 'Zona horaria UTC-3',
     'hero.languages': 'Inglés · Español · Ruso',
     'hero.cta.projects': 'Ver proyectos',
     'hero.cta.contact': 'Contactame',
