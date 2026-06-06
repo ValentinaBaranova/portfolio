@@ -13,6 +13,9 @@ const { title, description, enUrl, esUrl } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+// GA4 Measurement ID should be provided via PUBLIC_GA_MEASUREMENT_ID
+const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+
 const currentPath = Astro.url.pathname;
 const finalEnUrl = enUrl || (lang === 'es' ? `/en${currentPath === '/' ? '/' : currentPath}` : currentPath);
 const finalEsUrl = esUrl || (lang === 'en' ? currentPath.replace(/^\/en/, '') || '/' : currentPath);
@@ -77,6 +80,21 @@ const localBusinessStructuredData = {
 		<meta name="keywords" content={t('site.keywords')} />
 		<script type="application/ld+json" is:inline set:html={JSON.stringify(personStructuredData)} />
 		<script type="application/ld+json" is:inline set:html={JSON.stringify(localBusinessStructuredData)} />
+
+		{import.meta.env.PROD && GA_MEASUREMENT_ID && (
+			<>
+				<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+				<script
+					is:inline
+					set:html={`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}', { 'anonymize_ip': true });
+          `}
+				/>
+			</>
+		)}
 	</head>
 	<body class="bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-900 antialiased flex flex-col min-h-screen">
 		<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
