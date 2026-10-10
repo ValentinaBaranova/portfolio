@@ -6,19 +6,14 @@ const t = useTranslations(lang);
 
 const services = [
   {
-    title: t('services.1.title'),
-    description: t('services.1.desc'),
-    icon: 'M13 10V3L4 14h7v7l9-11h-7z'
+    title: t('services.3.title'),
+    description: t('services.3.desc'),
+    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01'
   },
   {
     title: t('services.2.title'),
     description: t('services.2.desc'),
     icon: 'M4 7v10c0 2.21 4.48 4 10 4s10-1.79 10-4V7M4 7c0 2.21 4.48 4 10 4s10-1.79 10-4M4 7c0-2.21 4.48-4 10-4s10 1.79 10 4m0 5c0 2.21-4.48 4-10 4S4 14.21 4 12'
-  },
-  {
-    title: t('services.3.title'),
-    description: t('services.3.desc'),
-    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01'
   },
   {
     title: t('services.4.title'),
@@ -35,7 +30,7 @@ const services = [
       <div class="h-1 w-12 bg-blue-600 rounded-full mx-auto"></div>
     </div>
     
-    <div class="grid md:grid-cols-2 gap-8">
+    <div class="grid md:grid-cols-3 gap-8">
       {services.map((service) => (
         <div class="p-8 border border-slate-100 rounded-2xl bg-white hover:border-blue-100 hover:shadow-xl hover:shadow-blue-50/50 transition-all group">
           <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
