@@ -5,6 +5,9 @@ export const languages = {
 
 export const defaultLang = 'es';
 
+// Price of the first version, in USD. Change it here to update the whole site.
+export const FIRST_VERSION_PRICE = 400;
+
 export const ui = {
   en: {
     'nav.projects': 'Projects',
@@ -13,11 +16,12 @@ export const ui = {
     'nav.contact': 'Contact',
     'site.title': "Custom Web Apps for Small Businesses · Valentina Baranova",
     'site.role': 'Freelance developer · Custom web apps',
-    'site.description': "Freelance developer in Buenos Aires. Custom web apps to replace spreadsheets and WhatsApp groups. First version in 1 week, USD 300.",
+    'site.description': `Freelance developer in Buenos Aires. Custom web apps to replace spreadsheets and WhatsApp groups. First version in 1 week, USD ${FIRST_VERSION_PRICE}.`,
+    'site.share.description': "Freelance developer in Buenos Aires. Custom web apps to replace spreadsheets and WhatsApp groups. First version in 1 week.",
     'site.alt.profile': 'Valentina Baranova freelance web developer Buenos Aires',
     'site.alt.project': 'Valentina Baranova freelance web developer Buenos Aires — Project screenshot',
     'hero.headline': "Custom web apps for small businesses",
-    'hero.subheadline': "First version with core features in 1 week — USD 300",
+    'hero.subheadline': `First version with core features in 1 week — USD ${FIRST_VERSION_PRICE}`,
     'hero.tech': 'Java · Kotlin · Spring Boot · Next.js · OpenAI',
     'hero.city': 'Buenos Aires',
     'hero.timezone': 'Timezone UTC-3',
@@ -29,7 +33,7 @@ export const ui = {
     'about.text': [
       "I'm a systems engineer and freelance software developer based in Buenos Aires, with over 18 years of experience in software development. I handle the whole project: from how the data is stored and processed to the screens you'll use every day.",
       "I help organize work that is currently tracked in spreadsheets, notebooks or WhatsApp groups: an internal tool, the first version of a product, or adding AI to a process you already have. I work remotely with clients in Argentina, LATAM, the US and other countries.",
-      "The first version, with the core features, takes 1 week and costs USD 300. It lets you see the idea working before investing more. After that, we can continue at an hourly rate (from USD 30) or with weekly collaboration. No long-term commitment."
+      `The first version, with the core features, takes 1 week from when you approve the prototype and costs USD ${FIRST_VERSION_PRICE}. It lets you see the idea working before investing more. After that, we can continue at an hourly rate (from USD 30) or with weekly collaboration. No long-term commitment.`
     ],
     'services.title': 'What I Can Build For You',
     'services.2.title': "Systems and integrations",
@@ -45,7 +49,7 @@ export const ui = {
     'process.2.title': 'Clickable prototype — free',
     'process.2.desc': 'I prepare a prototype you can click through. We adjust it until it matches what you need. No payment at this stage.',
     'process.3.title': 'Development in 1 week',
-    'process.3.desc': 'With a 50% prepayment, I build the first working version with its core features. USD 300 in total.',
+    'process.3.desc': 'Once you approve the prototype and make the 50% prepayment, I build the first working version with its core features in 1 week.',
     'process.4.title': 'Delivery',
     'process.4.desc': 'You get a working, deployed first version and pay the remaining 50%.',
     'projects.title': 'Recent Projects',
@@ -75,11 +79,12 @@ export const ui = {
     'nav.contact': 'Contacto',
     'site.title': 'Aplicaciones web a medida para pequeños negocios · Valentina Baranova',
     'site.role': 'Programadora freelance · Aplicaciones web a medida',
-    'site.description': 'Programadora freelance en Buenos Aires. Aplicaciones web a medida para reemplazar planillas y grupos de WhatsApp. Primera versión en 1 semana, USD 300.',
+    'site.description': `Programadora freelance en Buenos Aires. Aplicaciones web a medida para reemplazar planillas y grupos de WhatsApp. Primera versión en 1 semana, USD ${FIRST_VERSION_PRICE}.`,
+    'site.share.description': 'Programadora freelance en Buenos Aires. Aplicaciones web a medida para reemplazar planillas y grupos de WhatsApp. Primera versión en 1 semana.',
     'site.alt.profile': 'Valentina Baranova desarrolladora web freelance Buenos Aires',
     'site.alt.project': 'Valentina Baranova desarrolladora web freelance Buenos Aires — Captura de pantalla del proyecto',
     'hero.headline': 'Aplicaciones web a medida para pequeños negocios',
-    'hero.subheadline': 'Primera versión con funciones básicas en 1 semana — USD 300',
+    'hero.subheadline': `Primera versión con funciones básicas en 1 semana — USD ${FIRST_VERSION_PRICE}`,
     'hero.tech': 'Java · Kotlin · Spring Boot · Next.js · OpenAI',
     'hero.city': 'Buenos Aires',
     'hero.timezone': 'Zona horaria UTC-3',
@@ -91,7 +96,7 @@ export const ui = {
     'about.text': [
       'Soy ingeniera en sistemas y programadora freelance en Buenos Aires, con más de 18 años de experiencia en desarrollo de software. Me encargo de todo el proyecto: desde cómo se guardan y procesan los datos hasta las pantallas que vas a usar todos los días.',
       'Ayudo a ordenar tareas que hoy se llevan en planillas, cuadernos o grupos de WhatsApp: una herramienta interna, la primera versión de un producto o la incorporación de IA en un proceso que ya existe. Trabajo de forma remota con clientes de Argentina, LATAM, Estados Unidos y otros países.',
-      'La primera versión, con las funciones básicas, lleva 1 semana y cuesta USD 300. Sirve para ver la idea funcionando antes de invertir más. Después se puede seguir con tarifa por hora (desde USD 30) o con colaboración semanal. Sin compromiso a largo plazo.'
+      `La primera versión, con las funciones básicas, lleva 1 semana desde que aprobás el prototipo y cuesta USD ${FIRST_VERSION_PRICE}. Sirve para ver la idea funcionando antes de invertir más. Después se puede seguir con tarifa por hora (desde USD 30) o con colaboración semanal. Sin compromiso a largo plazo.`
     ],
     'services.title': 'Qué puedo construir para vos',
     'services.2.title': 'Sistemas e integraciones',
@@ -107,7 +112,7 @@ export const ui = {
     'process.2.title': 'Prototipo navegable — gratis',
     'process.2.desc': 'Preparo un prototipo en el que podés hacer clic y recorrer las pantallas. Lo ajustamos hasta que sea lo que necesitás. Sin pago en esta etapa.',
     'process.3.title': 'Desarrollo en 1 semana',
-    'process.3.desc': 'Con un adelanto del 50%, construyo la primera versión funcional con sus funciones básicas. USD 300 en total.',
+    'process.3.desc': 'Cuando aprobás el prototipo y hacés el adelanto del 50%, construyo la primera versión funcional con sus funciones básicas en 1 semana.',
     'process.4.title': 'Entrega',
     'process.4.desc': 'Recibís una primera versión funcionando y publicada, y pagás el 50% restante.',
     'projects.title': 'Proyectos recientes',
