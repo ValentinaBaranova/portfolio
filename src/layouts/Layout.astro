@@ -23,8 +23,6 @@ const finalEsUrl = esUrl || (lang === 'en' ? currentPath.replace(/^\/en/, '') ||
 
 const siteTitle = title || t('site.title');
 const siteDescription = description || t('site.description');
-// Link previews (WhatsApp, etc.) leave out the price
-const shareDescription = description || t('site.share.description');
 
 const personStructuredData = {
   "@context": "https://schema.org",
@@ -94,7 +92,7 @@ const localBusinessStructuredData = {
 		<meta property="og:site_name" content="Valentina Baranova" />
 		<meta property="og:locale" content={lang === 'es' ? 'es_AR' : 'en_US'} />
 		<meta property="og:title" content={siteTitle} />
-		<meta property="og:description" content={shareDescription} />
+		<meta property="og:description" content={siteDescription} />
 		<meta property="og:url" content={new URL(currentPath, Astro.site)} />
 		<meta name="twitter:card" content="summary" />
 		<script type="application/ld+json" is:inline set:html={JSON.stringify(personStructuredData)} />
