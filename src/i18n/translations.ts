@@ -32,7 +32,7 @@ export const ui = {
     'about.text': [
       "I'm a systems engineer and freelance software developer based in Buenos Aires, with over 18 years of experience in software development. I handle the whole project: from how the data is stored and processed to the screens you'll use every day.",
       "I help organize work that is currently tracked in spreadsheets, notebooks or WhatsApp groups: an internal tool, the first version of a product, or adding AI to a process you already have. I work remotely with clients in Argentina, LATAM, the US and other countries.",
-      `The first version, with the core features, takes 1 week from when you approve the prototype and costs USD ${FIRST_VERSION_PRICE}. It lets you see the idea working before investing more. After that, we can continue at an hourly rate (from USD 30) or with weekly collaboration. No long-term commitment.`
+      `The first version, with the core features, takes 1 week from when you approve the prototype and costs USD ${FIRST_VERSION_PRICE}. It includes a month of adjustments: I fix errors and make small changes at no extra cost. It lets you see the idea working before investing more. After that, we can continue at an hourly rate (from USD 30) or with weekly collaboration. No long-term commitment.`
     ],
     'services.title': 'What I Can Build For You',
     'services.2.title': "Systems and integrations",
@@ -50,10 +50,14 @@ export const ui = {
     'process.3.title': 'Development in 1 week',
     'process.3.desc': 'Once you approve the prototype and make the 50% prepayment, I build the first working version with its core features in 1 week.',
     'process.4.title': 'Delivery',
-    'process.4.desc': 'You get a working, deployed first version and pay the remaining 50%.',
+    'process.4.desc': 'You get a working, deployed first version and pay the remaining 50%. Adjustments during the following month are included.',
     'projects.title': 'Recent Projects',
     'projects.view': 'Visit Website',
     'projects.github': 'View on GitHub',
+    'projects.case': 'Read the case study',
+    'projects.taller.title': 'Classes and payments for a painting studio',
+    'projects.taller.desc': "A painting teacher asked me for an app to record her students' monthly payments and check how many classes each one has left. Now she does it on her phone: she marks who missed class, records payments with the amount already calculated and sends each student her upcoming classes on WhatsApp.",
+    'projects.taller.tags': ['Next.js', 'TypeScript', 'SQLite (Turso)', 'Vercel'],
     'projects.1.title': 'Spanish Language Practice App',
     'projects.1.desc': "A web platform for learning Spanish, for teachers and students. Teachers create exercises and share them with their students; people studying on their own can generate personalized practice with AI. It works in several languages, lets you share exercises by link and sends daily reminders via Telegram.",
     'projects.1.tags': ['Kotlin', 'Spring Boot', 'PostgreSQL', 'OpenAI', 'Telegram Bot API'],
@@ -94,7 +98,7 @@ export const ui = {
     'about.text': [
       'Soy ingeniera en sistemas y programadora freelance en Buenos Aires, con más de 18 años de experiencia en desarrollo de software. Me encargo de todo el proyecto: desde cómo se guardan y procesan los datos hasta las pantallas que vas a usar todos los días.',
       'Ayudo a ordenar tareas que hoy se llevan en planillas, cuadernos o grupos de WhatsApp: una herramienta interna, la primera versión de un producto o la incorporación de IA en un proceso que ya existe. Trabajo de forma remota con clientes de Argentina, LATAM, Estados Unidos y otros países.',
-      `La primera versión, con las funciones básicas, lleva 1 semana desde que aprobás el prototipo y cuesta USD ${FIRST_VERSION_PRICE}. Sirve para ver la idea funcionando antes de invertir más. Después se puede seguir con tarifa por hora (desde USD 30) o con colaboración semanal. Sin compromiso a largo plazo.`
+      `La primera versión, con las funciones básicas, lleva 1 semana desde que aprobás el prototipo y cuesta USD ${FIRST_VERSION_PRICE}. Incluye un mes de ajustes: corrijo errores y hago cambios chicos sin costo. Sirve para ver la idea funcionando antes de invertir más. Después se puede seguir con tarifa por hora (desde USD 30) o con colaboración semanal. Sin compromiso a largo plazo.`
     ],
     'services.title': 'Qué puedo construir para vos',
     'services.2.title': 'Sistemas e integraciones',
@@ -112,10 +116,14 @@ export const ui = {
     'process.3.title': 'Desarrollo en 1 semana',
     'process.3.desc': 'Cuando aprobás el prototipo y hacés el adelanto del 50%, construyo la primera versión funcional con sus funciones básicas en 1 semana.',
     'process.4.title': 'Entrega',
-    'process.4.desc': 'Recibís una primera versión funcionando y publicada, y pagás el 50% restante.',
+    'process.4.desc': 'Recibís una primera versión funcionando y publicada, y pagás el 50% restante. Durante el mes siguiente, los ajustes están incluidos.',
     'projects.title': 'Proyectos recientes',
     'projects.view': 'Visitar sitio web',
     'projects.github': 'Ver en GitHub',
+    'projects.case': 'Ver el caso completo',
+    'projects.taller.title': 'Clases y pagos de un taller de pintura',
+    'projects.taller.desc': 'Una profesora de pintura me pidió una aplicación para anotar los pagos mensuales de sus alumnas y ver cuántas clases le quedan a cada una. Ahora lo hace desde el celular: marca quién faltó, registra los pagos con el monto ya calculado y le manda a cada alumna sus próximas clases por WhatsApp.',
+    'projects.taller.tags': ['Next.js', 'TypeScript', 'SQLite (Turso)', 'Vercel'],
     'projects.1.title': 'App de práctica de español',
     'projects.1.desc': 'Una plataforma web para aprender español, para profesores y alumnos. Los profesores crean ejercicios y los comparten con sus alumnos; quien estudia por su cuenta puede generar prácticas personalizadas con IA. Funciona en varios idiomas, permite compartir ejercicios por enlace y envía recordatorios diarios por Telegram.',
     'projects.1.tags': ['Kotlin', 'Spring Boot', 'PostgreSQL', 'OpenAI', 'Telegram Bot API'],

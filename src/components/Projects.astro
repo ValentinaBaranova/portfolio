@@ -4,7 +4,23 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+const caseUrl = lang === 'es' ? '/proyectos/taller-de-pintura/' : '/en/projects/painting-studio/';
+
 const projects = [
+  {
+    title: t('projects.taller.title'),
+    description: t('projects.taller.desc'),
+    tags: t('projects.taller.tags'),
+    caseStudy: caseUrl,
+    images: [
+      { video: '/projects/taller/demo.mp4', poster: '/projects/taller/demo-poster.jpg' },
+      { mobile: '/projects/taller/asistencia.jpg' },
+      { mobile: '/projects/taller/alumna.jpg' },
+      { mobile: '/projects/taller/pagos.jpg' },
+      { mobile: '/projects/taller/registrar-pago.jpg' },
+      { mobile: '/projects/taller/whatsapp.jpg' },
+    ]
+  },
   {
     title: t('projects.1.title'),
     description: t('projects.1.desc'),
@@ -66,12 +82,15 @@ const projects = [
               <div class="flex gap-6 p-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar carousel-container">
                 {project.images.map((item) => {
                   const isString = typeof item === 'string';
-                  const mainSrc = isString ? item : (item.desktop || item.mobile);
+                  const mainSrc = isString ? item : ('video' in item ? item.video : (item.desktop || item.mobile));
+                  const poster = !isString && 'poster' in item ? item.poster : undefined;
                   const isVideo = mainSrc.toLowerCase().endsWith('.mov') || mainSrc.toLowerCase().endsWith('.mp4') || mainSrc.toLowerCase().endsWith('.webm');
                   
                   return isVideo ? (
                     <video 
                       src={mainSrc} 
+                      poster={poster}
+                      preload={poster ? 'none' : undefined}
                       aria-label={`${t('site.alt.project')} - ${project.title}`}
                       controls 
                       muted 
@@ -132,6 +151,17 @@ const projects = [
               ))}
             </div>
             <div class="mt-auto flex flex-wrap gap-6">
+              {project.caseStudy && (
+                <a 
+                  href={project.caseStudy} 
+                  class="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors group/link"
+                >
+                  {t('projects.case')}
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              )}
               {project.link && (
                 <a 
                   href={project.link} 
